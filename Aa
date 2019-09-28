@@ -9,7 +9,7 @@ int main()
     if(choice==1)
     {
     string msg;
-    cout<<"message can only be alphabetic:\n";
+    
     cout<<"enter message ";
   cin>>msg;
     int key;
@@ -50,7 +50,7 @@ int main()
     else if(choice==2)
     {
         string msg;
-    cout<<"message can only be alphabetic:\n";
+    
     cout<<"enter message:\n";
   cin>>msg;
     int key;
