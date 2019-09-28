@@ -19,12 +19,7 @@ int main()
      string encryptedText=msg;
       for(int i=0;i<msg.size();i++)
       {
-          if(msg[i]==32)
-          {
-              continue;
-          }
-          else
-          {
+       
               if((msg[i]+key)>122)
               {
                   int temp=(msg[i]+key)-122;
@@ -49,7 +44,7 @@ int main()
           }
          
          
-      }
+      
       cout<<"encrypted string is:\n"<<encryptedText;
     }
     else if(choice==2)
@@ -65,12 +60,6 @@ int main()
      string decryptedText=msg;
       for(int i=0;i<msg.size();i++)
       {
-          if(msg[i]==32)
-          {
-              continue;
-          }
-          else
-          {
               if((msg[i]-key)<65)
               {
                   int temp=(msg[i]-key)+26;
@@ -96,7 +85,7 @@ int main()
           }
          
          
-      }
+      
                      
         cout<<"decrypted message is:\n"<<decryptedText;
     }
