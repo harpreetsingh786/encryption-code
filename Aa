@@ -10,7 +10,7 @@ int main()
     {
     string msg;
     cout<<"message can only be alphabetic:\n";
-    cout<<"enter message in small letters";
+    cout<<"enter message ";
   cin>>msg;
     int key;
     cout<<"enter key";
@@ -29,7 +29,7 @@ int main()
               {
                   int temp=(msg[i]+key)-122;
                   encryptedText[i]=96+temp;
-                  encryptedText[i]=tolower(encryptedText[i]);
+                  
                  
               }
          
@@ -38,12 +38,12 @@ int main()
                   int temp=(msg[i]+key)-90;
                  
                   encryptedText[i]=64+temp;
-                  encryptedText[i]=tolower(encryptedText[i]);
+                  
               }
               else
               {
                   encryptedText[i]+=key;
-                  encryptedText[i]=tolower(encryptedText[i]);
+                  
               }
              
           }
@@ -75,7 +75,7 @@ int main()
               {
                   int temp=(msg[i]-key)+26;
                   decryptedText[i]=temp;
-                  decryptedText[i]=tolower(decryptedText[i]);
+                 
                  
               }
          
@@ -84,12 +84,12 @@ int main()
                   int temp=(msg[i]-key)+26;
                  
                   decryptedText[i]=temp;
-                  decryptedText[i]=tolower(decryptedText[i]);
+                  
               }
               else
               {
                   decryptedText[i]=msg[i]-key;
-                  decryptedText[i]=tolower(decryptedText[i]);
+                  
                  
               }
              
