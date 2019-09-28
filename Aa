@@ -1,0 +1,108 @@
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int choice;
+    cout<<"enter 1 for encryption or 2 for decryption\n";
+    cin>>choice;
+    if(choice==1)
+    {
+    string msg;
+    cout<<"message can only be alphabetic:\n";
+    cout<<"enter message in small letters";
+  cin>>msg;
+    int key;
+    cout<<"enter key";
+    cin>>key;
+     
+     string encryptedText=msg;
+      for(int i=0;i<msg.size();i++)
+      {
+          if(msg[i]==32)
+          {
+              continue;
+          }
+          else
+          {
+              if((msg[i]+key)>122)
+              {
+                  int temp=(msg[i]+key)-122;
+                  encryptedText[i]=96+temp;
+                  encryptedText[i]=tolower(encryptedText[i]);
+                 
+              }
+         
+              else if((msg[i]+key)>90&&msg[i]<=96)
+              {
+                  int temp=(msg[i]+key)-90;
+                 
+                  encryptedText[i]=64+temp;
+                  encryptedText[i]=tolower(encryptedText[i]);
+              }
+              else
+              {
+                  encryptedText[i]+=key;
+                  encryptedText[i]=tolower(encryptedText[i]);
+              }
+             
+          }
+         
+         
+      }
+      cout<<"encrypted string is:\n"<<encryptedText;
+    }
+    else if(choice==2)
+    {
+        string msg;
+    cout<<"message can only be alphabetic:\n";
+    cout<<"enter message:\n";
+  cin>>msg;
+    int key;
+    cout<<"enter key:\n";
+    cin>>key;
+     
+     string decryptedText=msg;
+      for(int i=0;i<msg.size();i++)
+      {
+          if(msg[i]==32)
+          {
+              continue;
+          }
+          else
+          {
+              if((msg[i]-key)<65)
+              {
+                  int temp=(msg[i]-key)+26;
+                  decryptedText[i]=temp;
+                  decryptedText[i]=tolower(decryptedText[i]);
+                 
+              }
+         
+              else if((msg[i]-key)<97&&(msg[i]-key)>90)
+              {
+                  int temp=(msg[i]-key)+26;
+                 
+                  decryptedText[i]=temp;
+                  decryptedText[i]=tolower(decryptedText[i]);
+              }
+              else
+              {
+                  decryptedText[i]=msg[i]-key;
+                  decryptedText[i]=tolower(decryptedText[i]);
+                 
+              }
+             
+          }
+         
+         
+      }
+                     
+        cout<<"decrypted message is:\n"<<decryptedText;
+    }
+    else
+    {
+        cout<<"invalid choice";
+    }
+   
+}
